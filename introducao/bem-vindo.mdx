@@ -1,0 +1,45 @@
+---
+title: "Bem-vindo à Credify API"
+description: "Documentação completa dos endpoints da plataforma Credify"
+---
+
+## O que é a Credify API?
+
+A Credify API oferece acesso a dados veiculares, cadastrais, judiciais, antifraude e muito mais — tudo em uma única plataforma integrada.
+
+## Categorias disponíveis
+
+<CardGroup cols={2}>
+  <Card title="Veiculares" icon="car">
+    Consultas por placa, CNH, histórico de proprietários, leilão, FIPE, RENAJUD e mais.
+  </Card>
+  <Card title="Cadastral PF / PJ" icon="user">
+    Dados cadastrais completos de Pessoa Física e Jurídica via CPF e CNPJ.
+  </Card>
+  <Card title="Background Checks e Antifraude" icon="shield">
+    Score, biometria, validação de email, telefone, cheques e muito mais.
+  </Card>
+  <Card title="KYC" icon="magnifying-glass">
+    Compliance, sanções, verificação de RH e BET.
+  </Card>
+  <Card title="Relatório Jurídico" icon="gavel">
+    Processos judiciais por CPF, CNPJ, nome e razão social.
+  </Card>
+  <Card title="Marketing" icon="bullseye">
+    Geração de leads por CEP, UF e município.
+  </Card>
+</CardGroup>
+
+## Fluxo básico de uso
+
+<Steps>
+  <Step title="Autentique-se">
+    Chame o endpoint `/auth` com seu `client_id` e `client_secret` para obter o token JWT.
+  </Step>
+  <Step title="Use o token">
+    Inclua o token no header `Authorization: Bearer {token}` em todas as requisições.
+  </Step>
+  <Step title="Faça as consultas">
+    Acesse qualquer endpoint disponível com o token válido. O token expira em 24 horas.
+  </Step>
+</Steps>

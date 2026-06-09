@@ -1,0 +1,181 @@
+{
+  "name": "Credify API",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.svg",
+  "colors": {
+    "primary": "#0066FF",
+    "light": "#3385FF",
+    "dark": "#0047B3"
+  },
+  "api": {
+    "openapi": "credify-api.yaml",
+    "baseUrl": "https://api.credify.com.br",
+    "auth": {
+      "method": "bearer"
+    }
+  },
+  "topbarLinks": [
+    {
+      "name": "Suporte",
+      "url": "https://credify.com.br"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Introdução",
+      "pages": [
+        "introducao/bem-vindo",
+        "introducao/autenticacao"
+      ]
+    },
+    {
+      "group": "Auth",
+      "pages": [
+        "api-reference/auth/autenticacao"
+      ]
+    },
+    {
+      "group": "Veiculares - Serviços",
+      "pages": [
+        "api-reference/veiculares-servicos/ecrlv"
+      ]
+    },
+    {
+      "group": "Veiculares",
+      "pages": [
+        "api-reference/veiculares/veiculo-total",
+        "api-reference/veiculares/historico-proprietarios",
+        "api-reference/veiculares/historico-roubo-furto",
+        "api-reference/veiculares/indicio-sinistro",
+        "api-reference/veiculares/leilao-conjugado",
+        "api-reference/veiculares/precificador-fipe",
+        "api-reference/veiculares/recall",
+        "api-reference/veiculares/renainf",
+        "api-reference/veiculares/renajud",
+        "api-reference/veiculares/veiculos-agregados",
+        "api-reference/veiculares/veiculo-documento",
+        "api-reference/veiculares/veiculo-documento-frota",
+        "api-reference/veiculares/flag-cnh",
+        "api-reference/veiculares/cnh-documento",
+        "api-reference/veiculares/cnh-chave-dupla",
+        "api-reference/veiculares/cnh-documento-imagem",
+        "api-reference/veiculares/cnh-pontuacao",
+        "api-reference/veiculares/veiculo-proprietario-placa",
+        "api-reference/veiculares/veiculo-proprietario-placa-historico",
+        "api-reference/veiculares/debitos-restricoes-proprietarios",
+        "api-reference/veiculares/veicular-bnacional-online",
+        "api-reference/veiculares/atpve",
+        "api-reference/veiculares/renavam",
+        "api-reference/veiculares/renavam-online",
+        "api-reference/veiculares/gravame",
+        "api-reference/veiculares/farol-leilao"
+      ]
+    },
+    {
+      "group": "Relatório Jurídico",
+      "pages": [
+        "api-reference/relatorio-juridico/cpf-cnpj-totalizador",
+        "api-reference/relatorio-juridico/nome-razao-totalizador",
+        "api-reference/relatorio-juridico/detalhes-processo-id",
+        "api-reference/relatorio-juridico/detalhes-processo-numero"
+      ]
+    },
+    {
+      "group": "Marketing",
+      "pages": [
+        "api-reference/marketing/gera-leads-cep",
+        "api-reference/marketing/gera-leads-uf",
+        "api-reference/marketing/gera-leads-detalhes",
+        "api-reference/marketing/gera-leads-detalhes-lote"
+      ]
+    },
+    {
+      "group": "Cadastral PF",
+      "pages": [
+        "api-reference/cadastral-pf/pf-pesquisa-cpf",
+        "api-reference/cadastral-pf/pf-telefone-cpf",
+        "api-reference/cadastral-pf/pf-email-cpf",
+        "api-reference/cadastral-pf/pf-nome",
+        "api-reference/cadastral-pf/pf-telefone",
+        "api-reference/cadastral-pf/pf-email",
+        "api-reference/cadastral-pf/pf-parentesco",
+        "api-reference/cadastral-pf/pf-receita-federal-dados-basicos",
+        "api-reference/cadastral-pf/pf-receita-federal",
+        "api-reference/cadastral-pf/pf-cadastral-dataset",
+        "api-reference/cadastral-pf/pf-score-forca-vinculo",
+        "api-reference/cadastral-pf/api-ocupacao-pf"
+      ]
+    },
+    {
+      "group": "Cadastral PJ",
+      "pages": [
+        "api-reference/cadastral-pj/pj-pesquisa-cnpj",
+        "api-reference/cadastral-pj/pj-telefone-cnpj",
+        "api-reference/cadastral-pj/pj-email-cnpj",
+        "api-reference/cadastral-pj/pj-razao-social",
+        "api-reference/cadastral-pj/pj-telefone",
+        "api-reference/cadastral-pj/pj-email",
+        "api-reference/cadastral-pj/pj-receita-federal",
+        "api-reference/cadastral-pj/pj-cadastral-dataset",
+        "api-reference/cadastral-pj/pj-quadro-societario",
+        "api-reference/cadastral-pj/pj-beneficiario-final"
+      ]
+    },
+    {
+      "group": "KYC",
+      "pages": [
+        "api-reference/kyc/kyc-sancoes",
+        "api-reference/kyc/kyc-rh",
+        "api-reference/kyc/kyc-bet"
+      ]
+    },
+    {
+      "group": "Background Checks e Antifraude",
+      "pages": [
+        "api-reference/background-checks/background-check-pf",
+        "api-reference/background-checks/background-check-pj",
+        "api-reference/background-checks/exposicao-publica-pf",
+        "api-reference/background-checks/exposicao-publica-pj",
+        "api-reference/background-checks/autentica-cartao",
+        "api-reference/background-checks/ccf-cheques",
+        "api-reference/background-checks/crednet-light",
+        "api-reference/background-checks/score-pf",
+        "api-reference/background-checks/score-pj",
+        "api-reference/background-checks/proprietario-telefone-operadora",
+        "api-reference/background-checks/faturamento-presumido-pj",
+        "api-reference/background-checks/faturamento-presumido-pj-credify",
+        "api-reference/background-checks/renda-presumida",
+        "api-reference/background-checks/renda-presumida-credify",
+        "api-reference/background-checks/debitos-estaduais-pj",
+        "api-reference/background-checks/valida-bin",
+        "api-reference/background-checks/validacao-cadastral",
+        "api-reference/background-checks/autentica-email",
+        "api-reference/background-checks/autentica-email-ip-endereco",
+        "api-reference/background-checks/email-history-risk",
+        "api-reference/background-checks/validacao-telefone-documento",
+        "api-reference/background-checks/validacao-whatsapp",
+        "api-reference/background-checks/biometria-facial-1x1",
+        "api-reference/background-checks/biometria-facial-1xn",
+        "api-reference/background-checks/biometria-facial-datavalid"
+      ]
+    },
+    {
+      "group": "Outros",
+      "pages": [
+        "api-reference/outros/mandados-prisao",
+        "api-reference/outros/documentoscopia-digital",
+        "api-reference/outros/documentoscopia-identificacao",
+        "api-reference/outros/sso",
+        "api-reference/outros/webhook",
+        "api-reference/outros/sintegra",
+        "api-reference/outros/fgts"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "website": "https://credify.com.br"
+  }
+}

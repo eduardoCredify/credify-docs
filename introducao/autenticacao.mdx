@@ -1,0 +1,57 @@
+---
+title: "Autenticação"
+description: "Como obter e usar o token JWT da Credify API"
+---
+
+## Como funciona
+
+A Credify API usa autenticação via **Bearer Token (JWT)**. O token é obtido através do endpoint `/auth` e é válido por **24 horas**.
+
+## Obtendo o token
+
+Faça uma requisição `POST` para `/auth` com suas credenciais:
+
+```bash
+curl --request POST \
+  --url https://api.credify.com.br/auth \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "client_id": "seu-client-id",
+    "client_secret": "seu-client-secret"
+  }'
+```
+
+**Resposta:**
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "expires_in": 86400
+}
+```
+
+## Usando o token
+
+Inclua o token no header `Authorization` em todas as requisições:
+
+```bash
+curl --request POST \
+  --url https://api.credify.com.br/veiculototal \
+  --header 'Authorization: Bearer SEU_TOKEN_AQUI' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "placa": "ABC1234"
+  }'
+```
+
+## Erros comuns
+
+| Código | Descrição | Solução |
+|--------|-----------|---------|
+| 401 | Token inválido ou expirado | Gere um novo token via `/auth` |
+| 403 | Sem permissão para o endpoint | Verifique seu plano de acesso |
+| 429 | Rate limit atingido | Aguarde e tente novamente |
+
+<Warning>
+  Nunca exponha seu `client_id` e `client_secret` em código público ou repositórios. Use variáveis de ambiente.
+</Warning>

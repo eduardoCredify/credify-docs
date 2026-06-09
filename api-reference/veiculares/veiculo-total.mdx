@@ -1,0 +1,114 @@
+---
+title: "Veículo Total"
+description: "Retorna dados completos do veículo a partir da placa, incluindo proprietário, débitos, restrições, leilão e histórico."
+openapi: "POST /veiculototal"
+---
+
+## Visão Geral
+
+O endpoint **Veículo Total** consolida em uma única chamada as principais informações de um veículo, evitando múltiplas requisições para fontes diferentes.
+
+<Note>
+  Este endpoint consome mais créditos por agregar diversas fontes de dados simultaneamente.
+</Note>
+
+## Dados retornados
+
+| Campo | Descrição | Tipo |
+|-------|-----------|------|
+| `placa` | Placa do veículo consultado | string |
+| `renavam` | Número do RENAVAM | string |
+| `chassi` | Número do chassi | string |
+| `marca` | Marca do veículo | string |
+| `modelo` | Modelo do veículo | string |
+| `ano_fabricacao` | Ano de fabricação | integer |
+| `ano_modelo` | Ano do modelo | integer |
+| `cor` | Cor do veículo | string |
+| `combustivel` | Tipo de combustível | string |
+| `uf` | Estado de emplacamento | string |
+| `municipio` | Município de emplacamento | string |
+| `proprietario` | Nome do proprietário atual | string |
+| `cpf_cnpj` | CPF ou CNPJ do proprietário | string |
+| `restricoes` | Lista de restrições ativas | array |
+| `debitos` | Débitos pendentes (IPVA, multas) | array |
+| `leilao` | Indicativo de veículo leiloado | boolean |
+| `roubo_furto` | Indicativo de roubo ou furto | boolean |
+| `sinistro` | Indicativo de sinistro | boolean |
+
+## Exemplo de requisição
+
+<CodeGroup>
+```bash cURL
+curl --request POST \
+  --url https://api.credify.com.br/veiculototal \
+  --header 'Authorization: Bearer SEU_TOKEN' \
+  --header 'Content-Type: application/json' \
+  --data '{
+    "placa": "ABC1234"
+  }'
+```
+
+```javascript JavaScript
+const response = await fetch('https://api.credify.com.br/veiculototal', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer SEU_TOKEN',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({ placa: 'ABC1234' })
+});
+
+const data = await response.json();
+```
+
+```python Python
+import requests
+
+response = requests.post(
+  'https://api.credify.com.br/veiculototal',
+  headers={'Authorization': 'Bearer SEU_TOKEN'},
+  json={'placa': 'ABC1234'}
+)
+
+data = response.json()
+```
+</CodeGroup>
+
+## Exemplo de resposta
+
+```json
+{
+  "placa": "ABC1234",
+  "renavam": "00000000000",
+  "chassi": "9BWZZZ377VT004251",
+  "marca": "VOLKSWAGEN",
+  "modelo": "GOL",
+  "ano_fabricacao": 2020,
+  "ano_modelo": 2021,
+  "cor": "BRANCA",
+  "combustivel": "FLEX",
+  "uf": "SP",
+  "municipio": "SAO PAULO",
+  "proprietario": "JOÃO DA SILVA",
+  "cpf_cnpj": "000.000.000-00",
+  "restricoes": [],
+  "debitos": [],
+  "leilao": false,
+  "roubo_furto": false,
+  "sinistro": false
+}
+```
+
+## Códigos de resposta
+
+| Código | Significado |
+|--------|-------------|
+| `200` | Consulta realizada com sucesso |
+| `401` | Token inválido ou expirado |
+| `403` | Sem permissão para este endpoint |
+| `404` | Veículo não encontrado |
+| `429` | Limite de requisições atingido |
+
+<Warning>
+  Certifique-se de que a placa está no formato correto: **AAA0000** (Mercosul: **AAA0A00**).
+</Warning>
